@@ -13,7 +13,8 @@
  | `aiya-紫荆文化合作提案.html` | 原始版提案 |
  | `docs/aiya-studio-landing.html` | AIYA Studio 早期着陆页 |
  | `docs/aiya-studio-i18n.html` | AIYA Studio 中英双语官网 |
- | `docs/studio-v3-system-evaluation-white-detailed-10slides (1).wps` | 黎老师技术白皮书 |
+ | `docs/studio-v3-system-evaluation-white-detailed-10slides.pdf` | 黎老师技术白皮书（PDF） |
+ | `docs/studio-v3-system-evaluation-white-detailed-10slides.pptx` | 黎老师技术白皮书（PPTX） |
  
  ## 关于 AIYA Studio
  
