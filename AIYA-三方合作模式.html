@@ -1,0 +1,127 @@
+ <!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>AIYA Studio — 三方合作模式框架</title>
+ <style>
+ @import url('https://fonts.googleapis.com/css2?family=Calibri&display=swap');
+ *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+ :root{--navy:#0E2841;--accent:#156082;--accent-light:#1A7AA8;--white:#FFFFFF;--bg:#F5F5F5;--border:#D0D0D0;--text:#1A1A1A;--text2:#555555;--lightblue:#0F9ED5;--green:#196B24;--orange:#E97132}
+ html{scroll-behavior:smooth}
+ body{font-family:'Calibri','Microsoft YaHei UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:14px}
+ ::selection{background:var(--accent);color:#fff}
+ .page{max-width:900px;margin:0 auto;background:var(--white);box-shadow:0 1px 4px rgba(0,0,0,0.08)}
+ .header{background:var(--navy);color:var(--white);padding:48px 36px 36px}
+ .header .label{font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.5);margin-bottom:8px;text-transform:uppercase}
+ .header h1{font-size:clamp(24px,3vw,36px);font-weight:300;letter-spacing:-0.3px;line-height:1.15;margin-bottom:6px}
+ .header h1 strong{font-weight:600}
+ .header h1 .accent{color:var(--lightblue)}
+ .header .sub{font-size:13px;color:rgba(255,255,255,0.6);font-weight:300;line-height:1.5}
+ .header .meta{font-size:11px;color:rgba(255,255,255,0.4);margin-top:12px;border-top:1px solid rgba(255,255,255,0.1);padding-top:10px}
+ section{padding:32px 36px;border-bottom:1px solid var(--border)}
+ section:last-child{border-bottom:none}
+ .section-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+ h2{font-size:18px;font-weight:600;margin-bottom:4px;color:var(--navy)}
+ h3{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px;margin-top:12px}
+ p{color:var(--text2);line-height:1.7;margin-bottom:6px;font-size:13px}
+ .parties{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+ .party-card{padding:16px;border-radius:2px;text-align:center}
+ .party-card .role{font-size:11px;font-weight:600;letter-spacing:0.08em;color:rgba(255,255,255,0.7);margin-bottom:4px;text-transform:uppercase}
+ .party-card .name{font-size:14px;font-weight:600;margin-bottom:6px}
+ .party-card .desc{font-size:11.5px;line-height:1.5;opacity:0.85}
+ .party-a{background:#0E2841;color:#fff}
+ .party-b{background:#156082;color:#fff}
+ .party-c{background:#1A7AA8;color:#fff}
+ .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+ .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
+ .card{padding:14px 16px;border:1px solid var(--border);background:var(--white);border-radius:2px}
+ .card h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px}
+ .card p{font-size:12px;color:var(--text2);margin:0;line-height:1.5}
+ .card .phase-tag{display:inline-block;font-size:10px;font-weight:600;padding:1px 8px;border-radius:2px;margin-bottom:4px}
+ .tag-accent{background:rgba(21,96,130,0.1);color:var(--accent)}
+ .tag-green{background:rgba(25,107,36,0.1);color:var(--green)}
+ .tag-orange{background:rgba(233,113,50,0.1);color:var(--orange)}
+ .tag-sky{background:rgba(15,158,213,0.1);color:var(--lightblue)}
+ table{width:100%;border-collapse:collapse;margin:12px 0;font-size:12.5px}
+ table th,table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+ table th{font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:rgba(21,96,130,0.04)}
+ table td{color:var(--text2)}
+ .box{background:rgba(21,96,130,0.04);border:1px solid rgba(21,96,130,0.12);padding:14px 18px;margin:12px 0;border-radius:2px}
+ .box h4{font-size:13px;font-weight:600;color:var(--navy);margin-bottom:3px}
+ .box p{font-size:12.5px;color:var(--text2);margin:0}
+ .ref{background:var(--bg);padding:12px 16px;border-radius:2px;margin:12px 0;font-size:12px;color:var(--text2);border-left:3px solid var(--accent)}
+ .ref strong{color:var(--navy)}
+ .footer{background:var(--navy);color:rgba(255,255,255,0.4);text-align:center;padding:20px 36px;font-size:11px}
+ @media(max-width:600px){.parties,.grid-2,.grid-3{grid-template-columns:1fr}.header{padding:36px 20px 28px}section{padding:24px 20px}}
+ </style>
+ </head>
+ <body>
+ <div class="page">
+ <div class="header"><div class="label">COOPERATION FRAMEWORK · 合作模式框架</div>
+ <h1>AIYA Studio <strong>×</strong> <span class="accent">紫荆文化集团</span></h1>
+ <div class="sub">基于多 AGENT 制片认知封装的企业内部 AI 工作流系统<br>三方合作模式框架 · 参考现有三方合作协议架构</div>
+ <div class="meta">机密 · 2026年6月 · 参考寒川子三方合作协议结构</div></div>
+ 
+ <section><div class="section-label">01 · THREE PARTIES</div><h2>三方结构</h2><p>参照紫荆文化体系现有合作模式（寒川子项目），三方的角色定位如下：</p>
+ <div class="parties">
+ <div class="party-card party-a"><div class="role">甲方</div><div class="name">紫荆业务公司</div><div class="desc">紫荆文化集团下属实体业务公司，提供业务场景、发行渠道和项目资源<br><br>如：银都机构、中华书局、三联书店、紫荆杂志社等</div></div>
+ <div class="party-card party-b"><div class="role">乙方</div><div class="name">AIYA Studio</div><div class="desc">多 AGENT 制片工作流系统提供方，负责技术实施、系统交付和持续服务<br><br>黎老师团队 · 技术研发与交付</div></div>
+ <div class="party-card party-c"><div class="role">丙方</div><div class="name">中间协调方</div><div class="desc">负责协调紫荆资源与 AIYA 技术对接，推动合作落地，参与运营执行<br><br>天下纵横（海口）文化产业投资有限公司</div></div>
+ </div></section>
+ 
+ <section><div class="section-label">02 · COOPERATION SCOPE</div><h2>合作内容</h2><p>结合现有三方合作协议（寒川子项目）的结构，AIYA 项目的合作内容建议如下：</p>
+ <table><thead><tr><th>合作模块</th><th>内容说明</th><th>对应紫荆业务线</th></tr></thead>
+ <tbody>
+ <tr><td><strong>AI 制片工作流系统部署</strong></td><td>AIYA 系统以私有化方式部署于紫荆内部，覆盖剧本讨论到成片输出的全链路</td><td>影视（银都机构、港湾影视）</td></tr>
+ <tr><td><strong>IP 视觉化生产</strong></td><td>利用多 AGENT 工作流将出版 IP 批量转化为视觉内容（概念图、插画、视频）</td><td>出版（联合出版集团）</td></tr>
+ <tr><td><strong>媒体内容视频化</strong></td><td>为杂志和新闻内容建立标准化视频生产流程</td><td>传媒（紫荆杂志、中国基金报）</td></tr>
+ <tr><td><strong>文旅视觉内容制作</strong></td><td>演出视觉设计、沉浸式内容制作、多语言版本输出</td><td>文旅（中国对外文化集团）</td></tr>
+ <tr><td><strong>人才引进与团队整合</strong></td><td>AIYA 团队整体引入紫荆体系，保留技术核心能力</td><td>组织建设</td></tr>
+ </tbody></table>
+ <div class="box"><h4>参考依据</h4><p>本合作框架参考《中华商务贸易有限公司 · 中华书局（香港）有限公司 · 天下纵横（海口）文化产业投资有限公司 · 三方合作协议》的结构设计，合作内容模块与寒川子项目的"出版发行 + 读书会 + 文化出海 + IP 开发 + 海外杂志"模式对应。</p></div></section>
+ 
+ <section><div class="section-label">03 · ROLES & RESPONSIBILITIES</div><h2>三方权责分配</h2>
+ <table><thead><tr><th>事项</th><th>甲方（紫荆业务公司）</th><th>乙方（AIYA Studio）</th><th>丙方（中间协调方）</th></tr></thead>
+ <tbody>
+ <tr><td><strong>系统部署</strong></td><td>提供内网服务器与算力环境</td><td>负责系统安装、配置与调试</td><td>协调双方资源与时间安排</td></tr>
+ <tr><td><strong>技术维护</strong></td><td>配合系统正常运行保障</td><td>提供技术支持和版本更新</td><td>协调问题反馈与处理</td></tr>
+ <tr><td><strong>项目实施</strong></td><td>指定业务场景与需求</td><td>按需求完成系统配置和交付</td><td>项目管理与进度监督</td></tr>
+ <tr><td><strong>培训与 SOP</strong></td><td>安排操作员参与培训</td><td>编写 SOP，完成操作员培训</td><td>协助培训组织与落地</td></tr>
+ <tr><td><strong>商务对接</strong></td><td>提供发行渠道和业务资源</td><td>提供技术方案和报价</td><td>商务谈判与合同推进</td></tr>
+ </tbody></table></section>
+ 
+ <section><div class="section-label">04 · IMPLEMENTATION PHASES</div><h2>分阶段实施路径</h2><p>参照紫荆体系现有的合作节奏，建议三阶段推进：</p>
+ <div class="grid-3">
+ <div class="card" style="border-top:3px solid var(--accent)"><span class="phase-tag tag-accent">Phase 1 · 1-2 月</span><h4>技术验证与试点</h4><p>选定一条业务线（建议影视）进行定向演示和私有部署 POC。完成剧本 benchmark、样片生产和 SOP 编写。</p></div>
+ <div class="card" style="border-top:3px solid var(--lightblue)"><span class="phase-tag tag-sky">Phase 2 · 2-4 月</span><h4>正式合作启动</h4><p>签署三方合作协议，完成系统正式部署。甲方提供业务场景，丙方协调资源，AIYA 交付生产标准。</p></div>
+ <div class="card" style="border-top:3px solid var(--green)"><span class="phase-tag tag-green">Phase 3 · 4-6 月</span><h4>全业务推广</h4><p>从试点业务线扩展至出版、传媒、文旅板块。建立资产体系和培训机制，探索人才引进路径。</p></div>
+ </div></section>
+ 
+ <section><div class="section-label">05 · REVENUE MODEL</div><h2>收益分配机制</h2><p>参照现有三方协议的"经费及收益分配"条款，AIYA 项目的收益模式建议如下：</p>
+ <div class="grid-2">
+ <div class="card"><h4>基础服务费</h4><p>系统私有化部署的年度许可费 + 首次实施费。甲方承担，丙方协调预算审批。</p></div>
+ <div class="card"><h4>项目收益分成</h4><p>针对具体制片/生产项目，按项目收益或制作预算约定比例分成。三方根据贡献度协商分配比例。</p></div>
+ <div class="card"><h4>IP 开发收益</h4><p>利用 AIYA 系统产出的 IP 衍生内容产生的收益（如视频版权、数字资产、视觉内容授权），三方另行约定分配。</p></div>
+ <div class="card"><h4>服务增值费</h4><p>超出基础服务的定制开发、模型调优、额外培训等产生的费用，按实际投入计价。</p></div>
+ </div></section>
+ 
+ <section><div class="section-label">06 · IP & ASSET OWNERSHIP</div><h2>知识产权与资产归属</h2><p>参照现有协议的知识产权条款，AIYA 项目需要明确的归属界定：</p>
+ <table><thead><tr><th>资产类型</th><th>归属</th></tr></thead>
+ <tbody>
+ <tr><td><strong>AIYA 系统本身</strong>（代码、架构、AGENT 设计）</td><td>归 AIYA Studio（乙方）团队所有</td></tr>
+ <tr><td><strong>合作过程中产出的视觉资产</strong>（图像、视频、数字内容）</td><td>归甲方所有，乙方保留技术署名权</td></tr>
+ <tr><td><strong>合作过程中产生的系统优化</strong>（定制功能、工作流改进）</td><td>三方共同所有，乙方可复用于其他项目</td></tr>
+ <tr><td><strong>培训材料和 SOP 文档</strong></td><td>归甲方所有，乙方保留副本参考</td></tr>
+ </tbody></table>
+ <div class="box"><h4>参考</h4><p>寒川子协议约定："合作过程中产生的新的知识产权（如翻译作品、IP 衍生品等），由三方共同所有，具体权益比例由三方另行协商确定。" AIYA 项目的 IP 归属可参照此结构。</p></div></section>
+ 
+ <section><div class="section-label">07 · NEXT STEPS</div><h2>后续行动项</h2>
+ <div class="ref"><strong>参考寒川子项目路径：</strong>丙方（天下纵横）在三方协议中承担"协调作者及其团队、读书会日常运营、协助策划文化出海及 IP 开发"的角色。在 AIYA 项目中，丙方可承担类似的协调角色，同时拓展技术落地的商务推动职能。</div>
+ <div class="grid-2">
+ <div class="card"><h4>短期（1-2 周）</h4><p>1. 确认紫荆方面具体业务对接公司（甲方）<br>2. 明确首期合作场景<br>3. 准备技术演示材料</p></div>
+ <div class="card"><h4>中期（1-2 月）</h4><p>1. 完成私有部署 POC<br>2. 起草三方合作协议文本<br>3. 提交正式商业方案和报价</p></div>
+ </div></section>
+ 
+ <div class="footer"><p>AIYA Studio × 紫荆文化集团 · 三方合作模式框架 · 机密 · 2026</p><p style="margin-top:2px;opacity:0.6">参考《中华商务 · 中华书局香港 · 天下纵横 三方合作协议》架构编制</p></div>
+ </div></body></html>
