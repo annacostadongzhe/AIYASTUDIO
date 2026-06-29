@@ -1,0 +1,13 @@
+ # WPS Office temporary files
+ *.wps
+ ~$*
+ .~*
+ 
+ # OS files
+ Thumbs.db
+ .DS_Store
+ 
+ # Editor temp files
+ *.swp
+ *.swo
+ *~

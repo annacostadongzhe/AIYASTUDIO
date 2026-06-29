@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIYA Studio</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+:root{--bg:#FAFAF5;--text:#1A1A1A;--text2:#6B6B6B;--accent:#D95A1A;--accent-hover:#C04E12;--border:#E5E5E0;--card:#FFFFFF;--mw:1200px;--fs:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--fs);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(250,250,245,0.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+nav .ni{max-width:var(--mw);margin:0 auto;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between}
+nav .logo{font-size:16px;font-weight:600;letter-spacing:-0.02em;color:var(--text);text-decoration:none}
+nav .logo span{color:var(--accent)}
+nav .nl{display:flex;gap:32px;list-style:none;align-items:center}
+nav .nl a{font-size:14px;font-weight:450;color:var(--text2);text-decoration:none;transition:color .2s}
+nav .nl a:hover{color:var(--text)}
+.lang-btn{background:none;border:1px solid var(--border);border-radius:4px;padding:4px 10px;font-family:var(--fs);font-size:13px;cursor:pointer;color:var(--text2);transition:all .2s}
+.lang-btn:hover{border-color:var(--accent);color:var(--accent)}
+.lang-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 80px;max-width:var(--mw);margin:0 auto}
+.hero .lb{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.hero h1{font-size:clamp(36px,6.5vw,68px);font-weight:700;letter-spacing:-0.03em;line-height:1.05;margin-bottom:24px;max-width:880px}
+.hero p{font-size:clamp(15px,1.8vw,19px);color:var(--text2);max-width:640px;line-height:1.7;margin-bottom:40px}
+.btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-p,.btn-s{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-family:var(--fs);font-size:15px;font-weight:500;border-radius:6px;cursor:pointer;transition:all .2s;text-decoration:none;border:1px solid transparent}
+.btn-p{background:var(--accent);color:#fff;border-color:var(--accent)}
+.btn-p:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn-s{background:transparent;color:var(--text);border-color:var(--border)}
+.btn-s:hover{border-color:var(--text);background:var(--card)}
+section{padding:100px 24px}
+section .si{max-width:var(--mw);margin:0 auto}
+.sl{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.st{font-size:clamp(26px,3.5vw,40px);font-weight:650;letter-spacing:-0.02em;line-height:1.2;margin-bottom:16px;max-width:700px}
+.ss{font-size:16px;color:var(--text2);max-width:600px;line-height:1.7}
+.bg{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px;margin-top:60px}
+.bi{border-top:2px solid var(--accent);padding-top:24px}
+.bi h3{font-size:18px;font-weight:600;margin-bottom:10px;letter-spacing:-0.01em}
+.bi p{font-size:15px;color:var(--text2);line-height:1.7}
+.bi .num{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:8px}
+.fg{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;margin-top:60px}
+.fc{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:36px 32px;transition:border-color .2s}
+.fc:hover{border-color:var(--accent)}
+.fc .ic{width:40px;height:40px;background:rgba(217,90,26,0.08);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:18px}
+.fc h3{font-size:17px;font-weight:600;margin-bottom:10px;letter-spacing:-0.01em}
+.fc p{font-size:14.5px;color:var(--text2);line-height:1.7}
+.con{background:var(--text);color:#fff}
+.con .sl{color:var(--accent)}
+.con .st{color:#fff}
+.con .ss{color:rgba(255,255,255,0.6)}
+.pl{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;margin-top:60px}
+.pr{border-left:2px solid var(--accent);padding-left:20px}
+.pr .num{font-size:13px;font-weight:600;color:var(--accent);margin-bottom:6px}
+.pr h4{font-size:16px;font-weight:600;margin-bottom:8px;color:#fff}
+.pr p{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7}
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:32px;margin-top:60px}
+.ei{border-top:1px solid var(--border);padding-top:24px}
+.ei h3{font-size:16px;font-weight:600;margin-bottom:8px;letter-spacing:-0.01em}
+.ei p{font-size:14.5px;color:var(--text2);line-height:1.7}
+.cl{text-align:center;padding:120px 24px}
+.cl .ci{max-width:700px;margin:0 auto}
+.cl bq{font-size:clamp(20px,2.8vw,30px);font-weight:500;line-height:1.4;letter-spacing:-0.01em;margin-bottom:24px;display:block}
+.cl cite{font-style:normal;font-size:14px;color:var(--text2)}
+footer{border-top:1px solid var(--border);padding:48px 24px}
+footer .fi{max-width:var(--mw);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+footer .fl{display:flex;gap:24px}
+footer .fl a{font-size:14px;color:var(--text2);text-decoration:none;transition:color .2s}
+footer .fl a:hover{color:var(--text)}
+footer .cp{font-size:13px;color:var(--text2)}
+@media(max-width:768px){
+nav .nl{display:none}
+.hero{min-height:auto;padding:100px 20px 60px}
+section{padding:60px 20px}
+.bg,.fg,.pl,.eg{gap:32px}
+.cl{padding:80px 20px}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="ni">
+<a href="/" class="logo">AIYA<span>Studio</span></a>
+<ul class="nl">
+<li><a href="#beliefs" data-i18n="nav.beliefs">信念</a></li>
+<li><a href="#engines" data-i18n="nav.engines">系统</a></li>
+<li><a href="#constitution" data-i18n="nav.constitution">宪章</a></li>
+<li><a href="#how" data-i18n="nav.how">工作流</a></li>
+<li><button class="lang-btn active" id="btn-zh">中文</button></li>
+<li><button class="lang-btn" id="btn-en">EN</button></li>
+</ul>
+</div>
+</nav>
+
+<section class="hero">
+<div class="lb" data-i18n="hero.label">AIYA Studio</div>
+<h1 data-i18n="hero.title">一个AI原生的电影级创作系统，用于构建原创视觉世界。</h1>
+<p data-i18n="hero.desc">它将剧本、角色逻辑、场景语言、镜头设计、AIGC、资产库和视频输出连接成一个连续的创意工作流——让AI生成始终处于人类导演的生产结构之下，而非零散的提示词集合。</p>
+<div class="btns">
+<a href="#" class="btn-p" data-i18n="hero.cta1">申请早期访问 →</a>
+<a href="#constitution" class="btn-s" data-i18n="hero.cta2">阅读宪章</a>
+</div>
+</section>
+
+<section id="beliefs">
+<div class="si">
+<div class="sl" data-i18n="beliefs.label">我们的信念</div>
+<h2 class="st" data-i18n="beliefs.title">少规则。多边界。每一层都由人类主导。</h2>
+<p class="ss" data-i18n="beliefs.sub">AIYA不是又一个文生视频工具。它是一个围绕一个简单信念设计的创作操作系统：最好的视觉故事来自人类意图通过AI精准实现——而不是用自动化取代艺术家。</p>
+<div class="bg">
+<div class="bi"><div class="num">01</div><h3 data-i18n="beliefs.b1t">以人为本</h3><p data-i18n="beliefs.b1d">让情感引导代码。艺术是主人，AI是工具。每一个创作决策都始于人类意图，然后用AI作为工具去实现它。</p></div>
+<div class="bi"><div class="num">02</div><h3 data-i18n="beliefs.b2t">拥抱协同</h3><p data-i18n="beliefs.b2d">放大创造力，而非取代它。目标不是一键生成整部电影——而是构建一个人心与数字思维合为一体的系统。</p></div>
+<div class="bi"><div class="num">03</div><h3 data-i18n="beliefs.b3t">追求原创</h3><p data-i18n="beliefs.b3d">创造，而非复制。每一帧画面、每一个角色都有独特的指纹。系统从零开始生成原创内容，而非混剪已有素材。</p></div>
+<div class="bi"><div class="num">04</div><h3 data-i18n="beliefs.b4t">坚守伦理</h3><p data-i18n="beliefs.b4d">尊重来源。保护数据。技术必须服务于创作者，而非剥削他们。每一份资产都有据可查，每一个模型都在合规数据上训练。</p></div>
+</div></div></section>
+
+<section id="engines">
+<div class="si">
+<div class="sl" data-i18n="engines.label">系统引擎</div>
+<h2 class="st" data-i18n="engines.title">四大引擎，一个连续工作流。</h2>
+<p class="ss" data-i18n="engines.sub">AIYA Studio围绕一个World Model构建——一个持久的、可学习的知识表征，将每一份资产、每一个角色、每一个场景连接成连贯的叙事结构。</p>
+<div class="eg">
+<div class="ei"><h3>World Model</h3><p data-i18n="engines.e1">一个理解故事逻辑的持久化知识图谱——角色关系、空间连续性、因果关系。它在每一个创作决策中维持连贯性。</p></div>
+<div class="ei"><h3>Loop</h3><p data-i18n="engines.e2">迭代优化引擎。每个输出都经过批评、修订和再生成的循环——收敛于导演的意图，而非平均化提示词池。</p></div>
+<div class="ei"><h3 data-i18n="engines.e3t">少规则，多边界</h3><p data-i18n="engines.e3d">与其施加僵化的模板，AIYA定义创作的边界——美学参数、叙事约束、风格指南——让艺术家在其中自由探索。</p></div>
+<div class="ei"><h3>AIGC Pipeline</h3><p data-i18n="engines.e4">剧本→角色逻辑→场景语言→镜头设计→资产生成→视频输出。每一阶段都是人类导演与AI系统之间的协作层。</p></div>
+</div></div></section>
+
+<section id="constitution" class="con">
+<div class="si">
+<div class="sl" data-i18n="cons.label">ANNA COSTA 宪章</div>
+<h2 class="st" data-i18n="cons.title">我们的未来之音，我们的创作基石。</h2>
+<p class="ss" data-i18n="cons.sub">ANNA COSTA宪章定义了AIYA Studio的运作方式——一份以人为本的AI创作承诺，尊重每一位艺术家和每一种媒介。</p>
+<div class="pl">
+<div class="pr"><div class="num">01</div><h4 data-i18n="cons.p1t">以人为本</h4><p data-i18n="cons.p1d">让情感引导代码。艺术是主人，AI是工具。人心引领每一个决策。</p></div>
+<div class="pr"><div class="num">02</div><h4 data-i18n="cons.p2t">拥抱协同</h4><p data-i18n="cons.p2d">放大创造力，而非取代它。人与机器以同一声音运作。</p></div>
+<div class="pr"><div class="num">03</div><h4 data-i18n="cons.p3t">追求原创</h4><p data-i18n="cons.p3d">每一个声音都是一枚独特的指纹。不抄袭。不混剪。只生成。</p></div>
+<div class="pr"><div class="num">04</div><h4 data-i18n="cons.p4t">坚守伦理</h4><p data-i18n="cons.p4d">尊重来源，保护数据。技术用于服务，而非伤害。</p></div>
+<div class="pr"><div class="num">05</div><h4 data-i18n="cons.p5t">铸就新语言</h4><p data-i18n="cons.p5d">它存在于声音与音乐之间，存在于人类智慧与人工智能之间。</p></div>
+<div class="pr"><div class="num">06</div><h4 data-i18n="cons.p6t">承诺未来</h4><p data-i18n="cons.p6d">进化。创新。启迪。每一次迭代都是对更高标准的承诺。</p></div>
+</div></div></section>
+
+<section id="how">
+<div class="si">
+<div class="sl" data-i18n="how.label">工作流程</div>
+<h2 class="st" data-i18n="how.title">从构思到成片。每一步都协同完成。</h2>
+<p class="ss" data-i18n="how.sub">AIYA Studio不自动化创作——它结构化创作。每一阶段都有人类监督，确保AI负责任地执行。</p>
+<div class="fg">
+<div class="fc"><div class="ic">✍</div><h3 data-i18n="how.c1t">剧本与角色</h3><p data-i18n="how.c1d">AI理解叙事逻辑，辅助构建角色弧光、关系网和情感基调，但故事走向由你决定。</p></div>
+<div class="fc"><div class="ic">🎬</div><h3 data-i18n="how.c2t">场景与镜头设计</h3><p data-i18n="how.c2d">用自然语言描述场景和镜头。系统将你的意图转化为场景布局、运镜方案和镜头列表。</p></div>
+<div class="fc"><div class="ic">🎨</div><h3 data-i18n="how.c3t">资产生成</h3><p data-i18n="how.c3d">在美学边界内生成视觉资产。角色、环境、道具——所有元素都属于你的世界。</p></div>
+<div class="fc"><div class="ic">🎵</div><h3 data-i18n="how.c4t">AIGC 音频</h3><p data-i18n="how.c4d">原创音效、环境氛围、配音——AIGC管线维持整个项目的听觉一致性。</p></div>
+<div class="fc"><div class="ic">🔄</div><h3 data-i18n="how.c5t">迭代循环</h3><p data-i18n="how.c5d">Loop引擎驱动生成、评审、修订的循环。每一轮迭代都让输出更接近导演的视野。</p></div>
+<div class="fc"><div class="ic">📦</div><h3 data-i18n="how.c6t">导出与分发</h3><p data-i18n="how.c6d">以任何格式输出。World Model保持所有连接的完整性，便于制作的任何阶段修改。</p></div>
+</div></div></section>
+
+<div class="cl">
+<div class="ci">
+<bq data-i18n="closing.quote">"The greatest stories come from those who know how to use the machine, not from those who let the machine use them."</bq>
+<cite data-i18n="closing.cite">— HIDE</cite>
+<div style="margin-top:8px;font-size:14px;color:var(--text2)" data-i18n="closing.cite2">Stick to the truth. — ANNA COSTA</div>
+<div style="margin-top:32px"><a href="#" class="btn-p" data-i18n="closing.cta">申请早期访问</a></div>
+</div></div>
+
+<footer>
+<div class="fi">
+<div class="cp" data-i18n="footer.cr">© 2026 AIYA Studio. 保留所有权利。</div>
+<div class="fl">
+<a href="#" data-i18n="footer.l1">隐私</a>
+<a href="#" data-i18n="footer.l2">文档</a>
+<a href="#" data-i18n="footer.l3">联系我们</a>
+</div>
+</div>
+</footer>
+
+<script>
+var i18n = {
+"zh":{
+"nav.beliefs":"信念","nav.engines":"系统","nav.constitution":"宪章","nav.how":"工作流",
+"hero.label":"AIYA Studio","hero.title":"一个AI原生的电影级创作系统，用于构建原创视觉世界。","hero.desc":"它将剧本、角色逻辑、场景语言、镜头设计、AIGC、资产库和视频输出连接成一个连续的创意工作流——让AI生成始终处于人类导演的生产结构之下，而非零散的提示词集合。","hero.cta1":"申请早期访问 →","hero.cta2":"阅读宪章",
+"beliefs.label":"我们的信念","beliefs.title":"少规则。多边界。每一层都由人类主导。","beliefs.sub":"AIYA不是又一个文生视频工具。它是一个围绕一个简单信念设计的创作操作系统：最好的视觉故事来自人类意图通过AI精准实现——而不是用自动化取代艺术家。",
+"beliefs.b1t":"以人为本","beliefs.b1d":"让情感引导代码。艺术是主人，AI是工具。每一个创作决策都始于人类意图，然后用AI作为工具去实现它。",
+"beliefs.b2t":"拥抱协同","beliefs.b2d":"放大创造力，而非取代它。目标不是一键生成整部电影——而是构建一个人心与数字思维合为一体的系统。",
+"beliefs.b3t":"追求原创","beliefs.b3d":"创造，而非复制。每一帧画面、每一个角色都有独特的指纹。系统从零开始生成原创内容，而非混剪已有素材。",
+"beliefs.b4t":"坚守伦理","beliefs.b4d":"尊重来源。保护数据。技术必须服务于创作者，而非剥削他们。每一份资产都有据可查，每一个模型都在合规数据上训练。",
+"engines.label":"系统引擎","engines.title":"四大引擎，一个连续工作流。","engines.sub":"AIYA Studio围绕一个World Model构建——一个持久的、可学习的知识表征，将每一份资产、每一个角色、每一个场景连接成连贯的叙事结构。",
+"engines.e1":"一个理解故事逻辑的持久化知识图谱——角色关系、空间连续性、因果关系。它在每一个创作决策中维持连贯性。",
+"engines.e2":"迭代优化引擎。每个输出都经过批评、修订和再生成的循环——收敛于导演的意图，而非平均化提示词池。",
+"engines.e3t":"少规则，多边界","engines.e3d":"与其施加僵化的模板，AIYA定义创作的边界——美学参数、叙事约束、风格指南——让艺术家在其中自由探索。",
+"engines.e4":"剧本→角色逻辑→场景语言→镜头设计→资产生成→视频输出。每一阶段都是人类导演与AI系统之间的协作层。",
+"cons.label":"ANNA COSTA 宪章","cons.title":"我们的未来之音，我们的创作基石。","cons.sub":"ANNA COSTA宪章定义了AIYA Studio的运作方式——一份以人为本的AI创作承诺，尊重每一位艺术家和每一种媒介。",
+"cons.p1t":"以人为本","cons.p1d":"让情感引导代码。艺术是主人，AI是工具。人心引领每一个决策。",
+"cons.p2t":"拥抱协同","cons.p2d":"放大创造力，而非取代它。人与机器以同一声音运作。",
+"cons.p3t":"追求原创","cons.p3d":"每一个声音都是一枚独特的指纹。不抄袭。不混剪。只生成。",
+"cons.p4t":"坚守伦理","cons.p4d":"尊重来源，保护数据。技术用于服务，而非伤害。",
+"cons.p5t":"铸就新语言","cons.p5d":"它存在于声音与音乐之间，存在于人类智慧与人工智能之间。",
+"cons.p6t":"承诺未来","cons.p6d":"进化。创新。启迪。每一次迭代都是对更高标准的承诺。",
+"how.label":"工作流程","how.title":"从构思到成片。每一步都协同完成。","how.sub":"AIYA Studio不自动化创作——它结构化创作。每一阶段都有人类监督，确保AI负责任地执行。",
+"how.c1t":"剧本与角色","how.c1d":"AI理解叙事逻辑，辅助构建角色弧光、关系网和情感基调，但故事走向由你决定。",
+"how.c2t":"场景与镜头设计","how.c2d":"用自然语言描述场景和镜头。系统将你的意图转化为场景布局、运镜方案和镜头列表。",
+"how.c3t":"资产生成","how.c3d":"在美学边界内生成视觉资产。角色、环境、道具——所有元素都属于你的世界。",
+"how.c4t":"AIGC 音频","how.c4d":"原创音效、环境氛围、配音——AIGC管线维持整个项目的听觉一致性。",
+"how.c5t":"迭代循环","how.c5d":"Loop引擎驱动生成、评审、修订的循环。每一轮迭代都让输出更接近导演的视野。",
+"how.c6t":"导出与分发","how.c6d":"以任何格式输出。World Model保持所有连接的完整性，便于制作的任何阶段修改。",
+"closing.quote":"\"The greatest stories come from those who know how to use the machine, not from those who let the machine use them.\"","closing.cite":"— HIDE","closing.cite2":"Stick to the truth. — ANNA COSTA","closing.cta":"申请早期访问",
+"footer.cr":"© 2026 AIYA Studio. 保留所有权利。","footer.l1":"隐私","footer.l2":"文档","footer.l3":"联系我们"
+},
+"en":{
+"nav.beliefs":"Beliefs","nav.engines":"System","nav.constitution":"Constitution","nav.how":"Workflow",
+"hero.label":"AIYA Studio","hero.title":"An AI-native cinematic production system for building original visual worlds.","hero.desc":"It connects script, character logic, scene language, shot design, AIGC, asset libraries, and video output into one continuous creative workflow — keeping AI generation under a human-directed production structure rather than a scattered prompt collection.","hero.cta1":"Request Early Access →","hero.cta2":"Read the Constitution",
+"beliefs.label":"Our Beliefs","beliefs.title":"Fewer rules. More boundaries. Human direction at every layer.","beliefs.sub":"AIYA isn't another prompt-to-video tool. It's a studio operating system designed around a simple conviction: the best visual stories come from human intent channeled through AI precision — not from automation replacing the artist.",
+"beliefs.b1t":"Prioritize Humanity","beliefs.b1d":"Let emotion guide the code. Art is the master; AI is the instrument. Every creative decision starts with human intention, then uses AI as a tool to realize it.",
+"beliefs.b2t":"Embrace Synergy","beliefs.b2d":"Amplify creativity, don't replace it. The goal isn't to generate entire films with a single click — it's to build a system where human heart and digital mind work as one voice.",
+"beliefs.b3t":"Demand Originality","beliefs.b3d":"Create, don't copy. Every frame, every character carries a unique fingerprint. The system is built to generate original content from scratch, not remix what already exists.",
+"beliefs.b4t":"Uphold Ethics","beliefs.b4d":"Respect the source. Protect the data. Technology must serve creators, not exploit them. Every asset accounted for, every model trained on properly licensed material.",
+"engines.label":"Engines","engines.title":"Four engines. One continuous workflow.","engines.sub":"AIYA Studio is built around a World Model — a persistent, learnable representation that connects every asset, every character, and every scene into a coherent narrative structure.",
+"engines.e1":"A persistent knowledge graph that understands your story's logic — character relationships, spatial continuity, cause and effect. It maintains coherence across every creative decision.",
+"engines.e2":"The iterative refinement engine. Each output cycles through critique, revision, and re-generation — converging toward the director's intent rather than averaging a prompt pool.",
+"engines.e3t":"Fewer Rules, More Boundaries","engines.e3d":"Rather than imposing rigid templates, AIYA defines creative boundaries — aesthetic parameters, narrative constraints, style guides — and lets the artist explore freely within them.",
+"engines.e4":"Script → character logic → scene language → shot design → asset generation → video output. Each stage is a collaborative layer between human director and AI system.",
+"cons.label":"ANNA COSTA Constitution","cons.title":"Our Future Sound. Our Creative Foundation.","cons.sub":"The ANNA COSTA constitution defines how AIYA Studio operates — a commitment to human-centered AI creation that respects both the artist and the medium.",
+"cons.p1t":"Prioritize Humanity","cons.p1d":"Let emotion guide the code. Art is the master; AI is the instrument. Human heart leads every decision.",
+"cons.p2t":"Embrace Synergy","cons.p2d":"Amplify creativity, don't replace it. Human and machine operate as one voice.",
+"cons.p3t":"Demand Originality","cons.p3d":"Every sound is a unique fingerprint. No copying. No remixing. Only generation.",
+"cons.p4t":"Uphold Ethics","cons.p4d":"Respect the source. Protect the data. Technology must serve, not harm.",
+"cons.p5t":"Forge the New Language","cons.p5d":"It exists between voice and music, between human wisdom and artificial intelligence.",
+"cons.p6t":"Commit to the Future","cons.p6d":"Evolve. Innovate. Inspire. Every iteration is a commitment to a higher standard.",
+"how.label":"How It Works","how.title":"From concept to final cut. Every step is a collaboration.","how.sub":"AIYA Studio doesn't automate creativity — it structures it. Each stage has human oversight, ensuring AI executes responsibly.",
+"how.c1t":"Script & Characters","how.c1d":"AI understands narrative logic, helps build character arcs, relationship webs, and emotional tone — but you decide where the story goes.",
+"how.c2t":"Scene & Shot Design","how.c2d":"Describe scenes and shots in natural language. The system translates your intent into scene blocking, camera movement, and shot lists.",
+"how.c3t":"Asset Generation","how.c3d":"Visual assets generated within aesthetic boundaries. Characters, environments, props — all elements belong to your world.",
+"how.c4t":"AIGC Audio","how.c4d":"Original sound design, ambient soundscapes, voice — the AIGC pipeline maintains sonic coherence across the entire project.",
+"how.c5t":"Iterative Loop","how.c5d":"The Loop engine drives generate-critique-revise cycles. Each iteration converges the output closer to the director's vision.",
+"how.c6t":"Export & Distribution","how.c6d":"Output in any format. The World Model maintains all connective integrity, making revision accessible at any production stage.",
+"closing.quote":"\"The greatest stories come from those who know how to use the machine, not from those who let the machine use them.\"","closing.cite":"— HIDE","closing.cite2":"Stick to the truth. — ANNA COSTA","closing.cta":"Request Early Access",
+"footer.cr":"© 2026 AIYA Studio. All rights reserved.","footer.l1":"Privacy","footer.l2":"Docs","footer.l3":"Contact"
+}
+};
+
+function switchLang(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (i18n[lang] && i18n[lang][key]) {
+      el.innerHTML = i18n[lang][key];
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  document.getElementById('btn-' + lang).classList.add('active');
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('btn-zh').addEventListener('click', function(e) { e.preventDefault(); switchLang('zh'); });
+  document.getElementById('btn-en').addEventListener('click', function(e) { e.preventDefault(); switchLang('en'); });
+  switchLang('zh');
+});
+</script>
+</body>
+</html>

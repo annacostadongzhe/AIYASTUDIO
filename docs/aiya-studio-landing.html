@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIYA Studio — Anthropic</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #FAFAF5;
+    --text: #1A1A1A;
+    --text-secondary: #6B6B6B;
+    --accent: #D95A1A;
+    --accent-hover: #C04E12;
+    --border: #E5E5E0;
+    --card-bg: #FFFFFF;
+    --max-width: 1200px;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(250, 250, 245, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav .nav-inner {
+    max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+    height: 56px; display: flex; align-items: center; justify-content: space-between;
+  }
+
+  nav .logo { font-size: 16px; font-weight: 600; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+  nav .logo span { color: var(--accent); }
+  nav .nav-links { display: flex; gap: 32px; list-style: none; }
+  nav .nav-links a { font-size: 14px; font-weight: 450; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+  nav .nav-links a:hover { color: var(--text); }
+
+  .hero { min-height: 85vh; display: flex; flex-direction: column; justify-content: center; padding: 120px 24px 80px; max-width: var(--max-width); margin: 0 auto; }
+  .hero .label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(40px, 7vw, 72px); font-weight: 700; letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 24px; max-width: 900px; }
+  .hero p { font-size: clamp(16px, 2vw, 20px); color: var(--text-secondary); max-width: 680px; line-height: 1.7; margin-bottom: 40px; }
+  .hero-buttons { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; font-family: var(--font-sans); font-size: 15px; font-weight: 500; border-radius: 6px; cursor: pointer; transition: all 0.2s; text-decoration: none; border: 1px solid transparent; }
+  .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+  .btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+  .btn-secondary:hover { border-color: var(--text); background: var(--card-bg); }
+
+  section { padding: 100px 24px; }
+  section .section-inner { max-width: var(--max-width); margin: 0 auto; }
+  .section-label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 650; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 16px; max-width: 700px; }
+  .section-subtitle { font-size: 17px; color: var(--text-secondary); max-width: 600px; line-height: 1.7; }
+
+  .beliefs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; margin-top: 60px; }
+  .belief-item { border-top: 2px solid var(--accent); padding-top: 24px; }
+  .belief-item h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .belief-item p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+  .belief-item .number { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 8px; }
+
+  .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; margin-top: 60px; }
+  .feature-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; padding: 36px 32px; transition: border-color 0.2s; }
+  .feature-card:hover { border-color: var(--accent); }
+  .feature-card .icon { width: 40px; height: 40px; background: rgba(217, 90, 26, 0.08); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 18px; }
+  .feature-card h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
+  .feature-card p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.7; }
+
+  .constitution { background: var(--text); color: #fff; }
+  .constitution .section-label { color: var(--accent); }
+  .constitution .section-title { color: #fff; }
+  .constitution .section-subtitle { color: rgba(255,255,255,0.6); }
+  .principles-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 60px; }
+  .principle { border-left: 2px solid var(--accent); padding-left: 20px; }
+  .principle .num { font-size: 13px; font-weight: 600; color: var(--accent); margin-bottom: 6px; }
+  .principle h4 { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: #fff; }
+  .principle p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
+
+  .engine-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; margin-top: 60px; }
+  .engine-item { border-top: 1px solid var(--border); padding-top: 24px; }
+  .engine-item h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .engine-item p { font-size: 14.5px; color: var(--text-secondary); line-height: 1.7; }
+
+  .closing { text-align: center; padding: 120px 24px; border-top: 1px solid var(--border); }
+  .closing .closing-inner { max-width: 700px; margin: 0 auto; }
+  .closing blockquote { font-size: clamp(22px, 3vw, 32px); font-weight: 500; line-height: 1.4; letter-spacing: -0.01em; margin-bottom: 24px; quotes: none; }
+  .closing cite { font-style: normal; font-size: 14px; color: var(--text-secondary); }
+
+  footer { border-top: 1px solid var(--border); padding: 48px 24px; }
+  footer .footer-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  footer .footer-links { display: flex; gap: 24px; }
+  footer .footer-links a { font-size: 14px; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+  footer .footer-links a:hover { color: var(--text); }
+  footer .copyright { font-size: 13px; color: var(--text-secondary); }
+
+  @media (max-width: 768px) {
+    nav .nav-links { display: none; }
+    .hero { min-height: auto; padding: 100px 20px 60px; }
+    section { padding: 60px 20px; }
+    .beliefs-grid, .features-grid, .principles-list, .engine-grid { gap: 32px; }
+    .closing { padding: 80px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">AIYA<span>Studio</span></a>
+    <ul class="nav-links">
+      <li><a href="#beliefs">What We Believe</a></li>
+      <li><a href="#engines">The System</a></li>
+      <li><a href="#constitution">Constitution</a></li>
+      <li><a href="#how">How It Works</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="label">AIYA Studio</div>
+  <h1>An AI-native cinematic production system for building original visual worlds.</h1>
+  <p>It connects script, character logic, scene language, shot design, AIGC, asset libraries, and video output into one continuous creative workflow — keeping AI generation under a human-directed production structure rather than a scattered prompt collection.</p>
+  <div class="hero-buttons">
+    <a href="#" class="btn btn-primary">Request Early Access →</a>
+    <a href="#" class="btn btn-secondary">Read the Constitution</a>
+  </div>
+</section>
+
+<section id="beliefs">
+  <div class="section-inner">
+    <div class="section-label">What We Believe</div>
+    <h2 class="section-title">Fewer rules. More boundaries. Human direction at every layer.</h2>
+    <p class="section-subtitle">AIYA isn't another prompt-to-video tool. It's a studio operating system designed around a simple conviction: the best visual stories come from human intent channeled through AI precision — not from automation replacing the artist.</p>
+    <div class="beliefs-grid">
+      <div class="belief-item">
+        <div class="number">01</div>
+        <h3>Prioritize Humanity</h3>
+        <p>Let emotion guide the code. Art is the master; AI is the instrument. Every creative decision starts with human intention, then uses AI as a tool to realize it.</p>
+      </div>
+      <div class="belief-item">
+        <div class="number">02</div>
+        <h3>Embrace Synergy</h3>
+        <p>Amplify creativity, don't replace it. The goal isn't to generate entire films with a single click — it's to build a system where human heart and digital mind work as one voice.</p>
+      </div>
+      <div class="belief-item">
+        <div class="number">03</div>
+        <h3>Demand Originality</h3>
+        <p>Create, don't copy. Every sound, every frame, every character carries a unique fingerprint. The system is built to generate original content from scratch, not remix what already exists.</p>
+      </div>
+      <div class="belief-item">
+        <div class="number">04</div>
+        <h3>Uphold Ethics</h3>
+        <p>Respect the source. Protect the data. Technology must serve creators, not exploit them. Every asset accounted for, every model trained on properly licensed material.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="engines">
+  <div class="section-inner">
+    <div class="section-label">The System</div>
+    <h2 class="section-title">Four engines. One continuous workflow.</h2>
+    <p class="section-subtitle">AIYA Studio is built around a World Model — a persistent, learnable representation that connects every asset, every character, and every scene into a coherent narrative structure.</p>
+    <div class="engine-grid">
+      <div class="engine-item">
+        <h3>World Model</h3>
+        <p>A persistent knowledge graph that understands your story's logic — character relationships, spatial continuity, cause and effect. It maintains coherence across every creative decision.</p>
+      </div>
+      <div class="engine-item">
+        <h3>Loop</h3>
+        <p>The iterative refinement engine. Each output cycles through critique, revision, and re-generation — converging toward the director's intent rather than averaging a prompt pool.</p>
+      </div>
+      <div class="engine-item">
+        <h3>Fewer Rules, More Boundaries</h3>
+        <p>Rather than imposing rigid templates, AIYA defines creative boundaries — aesthetic parameters, narrative constraints, style guides — and lets the artist explore freely within them.</p>
+      </div>
+      <div class="engine-item">
+        <h3>AIGC Pipeline</h3>
+        <p>Script → character logic → scene language → shot design → asset generation → video output. Each stage is a collaborative layer between human director and AI system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="constitution" class="constitution">
+  <div class="section-inner">
+    <div class="section-label">ANNA COSTA Constitution</div>
+    <h2 class="section-title">Our Future Sound. Our Creative Foundation.</h2>
+    <p class="section-subtitle">The ANNA COSTA constitution defines how AIYA Studio operates — a commitment to human-centered AI creation that respects both the artist and the medium.</p>
+    <div class="principles-list">
+      <div class="principle">
+        <div class="num">01</div>
+        <h4>Prioritize Humanity</h4>
+        <p>Let emotion guide the code. Art is the master; AI is the instrument. Human heart leads every decision.</p>
+      </div>
+      <div class="principle">
+        <div class="num">02</div>
+        <h4>Embrace Synergy</h4>
+        <p>Amplify creativity, don't replace it. Human and machine operate as one unified voice.</p>
+      </div>
+      <div class="principle">
+        <div class="num">03</div>
+        <h4>Demand Originality</h4>
+        <p>Every creation is a unique fingerprint. No remixing. No copying. Only original generation.</p>
+      </div>
+      <div class="principle">
+        <div class="num">04</div>
+        <h4>Uphold Ethics</h4>
+        <p>Respect the source. Protect creator data. Technology serves, never harms.</p>
+      </div>
+      <div class="principle">
+        <div class="num">05</div>
+        <h4>Forge the New Language</h4>
+        <p>It lives between voice and music, between human wisdom and artificial intelligence.</p>
+      </div>
+      <div class="principle">
+        <div class="num">06</div>
+        <h4>Commit to the Future</h4>
+        <p>Evolve. Innovate. Inspire. The system grows with every project, every artist, every story.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">From vision to output. Every step is a collaboration.</h2>
+    <p class="section-subtitle">AIYA Studio doesn't automate storytelling — it structures it. Each stage keeps the human director in control while AI handles the heavy lifting.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="icon">✍</div>
+        <h3>Script & Characters</h3>
+        <p>Write with AI that understands narrative logic. The World Model tracks every arc, every relationship, every emotional beat across your entire project.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎬</div>
+        <h3>Scene & Shot Design</h3>
+        <p>Describe the scene in natural language. The system translates intent into shot lists, camera angles, and blocking — all within the visual grammar you define.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎨</div>
+        <h3>Asset Generation</h3>
+        <p>Original assets generated within your aesthetic boundaries. Characters, environments, props — every element belongs to your world, not a stock library.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🎵</div>
+        <h3>Sound & AIGC</h3>
+        <p>Original music, sound design, voice. The AIGC pipeline maintains sonic consistency across your project. Every sound carries your world's unique signature.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">🔄</div>
+        <h3>Iterative Refinement</h3>
+        <p>The Loop engine cycles through generation, review, and revision. Each iteration brings the output closer to the director's vision, learning from feedback.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">📦</div>
+        <h3>Export & Distribute</h3>
+        <p>Output to any format. The World Model ensures everything stays connected, making revisions painless at any stage of production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="closing-inner">
+    <blockquote>"The best stories aren't told by machines. They're told by humans who know how to use them."</blockquote>
+    <cite>— AIYA Studio · ANNA COSTA</cite>
+    <div style="margin-top: 40px;">
+      <a href="#" class="btn btn-primary" style="font-size: 14px;">Request Early Access</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="copyright">© 2026 AIYA Studio. All rights reserved.</div>
+    <div class="footer-links">
+      <a href="#">Constitution</a>
+      <a href="#">Documentation</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
