@@ -1,0 +1,341 @@
+ <!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>AIYA Studio × 紫荆文化集团 — 合作提案</title>
+ <style>
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+ *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+ :root{--bg:#0a0b0e;--bg2:#111318;--border:#1e2230;--text:#e8eaf0;--text2:#8891a5;--accent:#5b7cfa;--accent2:#22d3ee;--accent-soft:rgba(91,124,250,0.1);--green:#34d399;--amber:#fbbf24;--rose:#f472b6;--radius:12px}
+ html{scroll-behavior:smooth}
+ body{font-family:'Inter','Noto Sans SC',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+ ::selection{background:var(--accent);color:#fff}
+ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(10,11,14,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+ .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:56px}
+ .nav-logo{font-weight:700;font-size:16px;letter-spacing:-0.3px;display:flex;align-items:center;gap:8px}
+ .nav-logo span{color:var(--accent)}
+ .nav-links{display:flex;gap:8px;list-style:none}
+ .nav-links a{color:var(--text2);text-decoration:none;font-size:13px;font-weight:500;padding:6px 14px;border-radius:6px;transition:all .2s}
+ .nav-links a:hover{color:var(--text);background:var(--accent-soft)}
+ @media(max-width:768px){.nav-links{display:none}}
+ section{padding:80px 24px;max-width:1100px;margin:0 auto}
+ .hero{min-height:80vh;display:flex;flex-direction:column;justify-content:center;padding:120px 24px 60px;max-width:1100px;margin:0 auto;position:relative}
+ .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(91,124,250,0.06),transparent),radial-gradient(ellipse 40% 40% at 30% 60%,rgba(34,211,238,0.04),transparent);pointer-events:none}
+ .hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent-soft);border:1px solid rgba(91,124,250,0.2);color:var(--accent);padding:6px 16px;border-radius:100px;font-size:12px;font-weight:600;letter-spacing:0.3px;margin-bottom:24px;text-transform:uppercase}
+ .hero h1{font-size:clamp(32px,5vw,56px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:16px}
+ .hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+ .hero .sub{font-size:clamp(15px,1.6vw,18px);color:var(--text2);max-width:700px;line-height:1.7;margin-bottom:32px}
+ .section-label{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+ h2{font-size:clamp(24px,3vw,36px);font-weight:600;letter-spacing:-0.5px;margin-bottom:16px;line-height:1.2}
+ h2+p{color:var(--text2);font-size:15px;max-width:640px;margin-bottom:40px;line-height:1.7}
+ .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;margin:32px 0}
+ .grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin:32px 0}
+ .card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:border-color .3s}
+ .card:hover{border-color:var(--accent)}
+ .card .icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:18px}
+ .card h3{font-size:16px;font-weight:600;margin-bottom:8px}
+ .card p{font-size:14px;color:var(--text2);line-height:1.6}
+ .card .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 10px;border-radius:4px;margin-top:10px}
+ .tag-blue{background:rgba(91,124,250,0.15);color:var(--accent)}
+ .tag-green{background:rgba(52,211,153,0.15);color:var(--green)}
+ .tag-amber{background:rgba(251,191,36,0.15);color:var(--amber)}
+ .tag-rose{background:rgba(244,114,182,0.15);color:var(--rose)}
+ .accent-card{border-left:3px solid var(--accent)}
+ .comparison-table{width:100%;border-collapse:collapse;margin:32px 0;font-size:14px}
+ .comparison-table th,.comparison-table td{padding:14px 16px;text-align:left;border-bottom:1px solid var(--border)}
+ .comparison-table th{color:var(--accent);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+ .comparison-table td{color:var(--text2)}
+ .comparison-table tr:hover td{color:var(--text)}
+ .highlight-box{background:linear-gradient(135deg,rgba(91,124,250,0.08),rgba(34,211,238,0.05));border:1px solid rgba(91,124,250,0.2);border-radius:var(--radius);padding:28px 32px;margin:32px 0}
+ .highlight-box h3{font-size:16px;font-weight:600;margin-bottom:8px;color:var(--accent)}
+ .highlight-box p{font-size:14px;color:var(--text2);line-height:1.7}
+ .quote-block{border-left:3px solid var(--accent);padding:16px 20px;margin:24px 0;background:var(--bg2);border-radius:0 var(--radius) var(--radius) 0}
+ .quote-block p{font-style:italic;color:var(--text2);font-size:14px}
+ .quote-block cite{display:block;margin-top:8px;font-size:13px;color:var(--accent);font-style:normal}
+ .roadmap{position:relative;padding-left:32px;margin:32px 0}
+ .roadmap::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--border)}
+ .roadmap-item{position:relative;margin-bottom:28px;padding-left:20px}
+ .roadmap-item::before{content:'';position:absolute;left:-24px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+ .roadmap-item h4{font-size:15px;font-weight:600;margin-bottom:4px}
+ .roadmap-item p{font-size:14px;color:var(--text2);line-height:1.6}
+ .cta-section{text-align:center;padding:100px 24px}
+ .cta-section h2{margin-bottom:12px}
+ .cta-section p{color:var(--text2);margin-bottom:32px}
+ .btn-primary,.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;font-family:inherit;font-size:15px;font-weight:500;border-radius:8px;cursor:pointer;transition:all .2s;text-decoration:none;border:1px solid transparent}
+ .btn-primary{background:var(--accent);color:#fff}
+ .btn-primary:hover{background:#4a6be0}
+ .btn-secondary{background:transparent;color:var(--text);border-color:var(--border)}
+ .btn-secondary:hover{border-color:var(--text)}
+ .btn-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+ footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center}
+ footer p{font-size:13px;color:var(--text2)}
+ .timeline-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:32px 0}
+ .timeline-item{padding:20px;border-radius:var(--radius);background:var(--bg2);border:1px solid var(--border);text-align:center}
+ .timeline-item .phase{font-size:14px;font-weight:600;color:var(--accent);margin-bottom:6px}
+ .timeline-item .time{font-size:12px;color:var(--text2);margin-bottom:8px}
+ .timeline-item .desc{font-size:13px;color:var(--text2);line-height:1.5}
+ @media(max-width:768px){section{padding:48px 20px}.hero{padding:100px 20px 40px}}
+ </style>
+ </head>
+ <body>
+ <nav>
+ <div class="nav-inner">
+ <div class="nav-logo">AIYA<span>Studio</span></div>
+ <ul class="nav-links">
+ <li><a href="#position">定位</a></li>
+ <li><a href="#capabilities">能力</a></li>
+ <li><a href="#match">业务匹配</a></li>
+ <li><a href="#value">商业价值</a></li>
+ <li><a href="#roadmap">合作路径</a></li>
+ <li><a href="#next">下一步</a></li>
+ </ul>
+ </div>
+ </nav>
+ 
+ <div class="hero">
+ <div class="hero-bg"></div>
+ <div class="hero-badge">🤝 合作提案 · 机密</div>
+ <h1>AIYA Studio <em>×</em> 紫荆文化集团</h1>
+ <div class="sub">基于多AGENT制片认知封装的企业内部AI工作流系统，<br>助力紫荆文化集团影视、出版、传媒、文旅四大板块降本增效。</div>
+ <div class="btn-group">
+ <a href="#position" class="btn-primary">阅读提案 ↓</a>
+ <a href="#next" class="btn-secondary">直接联系</a>
+ </div>
+ </div>
+ 
+ <section id="position">
+ <div class="section-label">定位</div>
+ <h2>AIYA 不是又一个 AI 工具</h2>
+ <p>它是一个<b>企业内部 AI 制片工作流系统</b>。核心不是"能生成什么"，而是"能把专业制片判断交给系统流程"。</p>
+ 
+ <div class="highlight-box">
+ <h3>一句话定义</h3>
+ <p>基于 GPT-Image 2 Edit + Dreamina / Seedance 2.0 的多 AGENT 企业内制片工作流系统。<br>核心价值：<b>多 AGENT 制片认知封装</b>——把导演、分镜、视觉、prompt 能力封装成流程，让组织级生产成为可能。</p>
+ </div>
+ 
+ <div class="grid-3">
+ <div class="card">
+ <div class="icon" style="background:rgba(91,124,250,0.12)">🎯</div>
+ <h3>不是通用平台</h3>
+ <p>不是无限画布、不是单AGENT prompt工具。它把专业制片判断封装成可确认的流程步骤。</p>
+ </div>
+ <div class="card">
+ <div class="icon" style="background:rgba(52,211,153,0.12)">🧠</div>
+ <h3>认知封装</h3>
+ <p>镜头语言、构图、表演、资产引用、质量门禁——这些专业能力被 AGENT 承担，不丢给操作员。</p>
+ </div>
+ <div class="card">
+ <div class="icon" style="background:rgba(251,191,36,0.12)">📊</div>
+ <h3>完成度 80-85%</h3>
+ <p>核心生产链路和 AGENT 设计已经成形。已具备内部部署演示基础。</p>
+ </div>
+ </div>
+ 
+ <div class="quote-block">
+ <p>系统完成度 80-85%。强在系统智能和流程，商业化外包装仍可继续打磨。</p>
+ <cite>— 黎老师，技术白皮书（2026.06）</cite>
+ </div>
+ </section>
+ 
+ <section id="capabilities">
+ <div class="section-label">核心能力</div>
+ <h2>多 AGENT 生产判断网络</h2>
+ <p>8 个专业 AGENT 角色组成生产闭环，互相质检、迭代收敛，将专业制片流程系统化。</p>
+ 
+ <div class="grid-2">
+ <div class="card">
+ <h3>Story Director</h3>
+ <p>负责故事结构、冲突推进、角色动机和叙事节奏，避免剧本只停留在原始描述。</p>
+ </div>
+ <div class="card">
+ <h3>Visual Director</h3>
+ <p>负责画面语言、构图、色彩、空间关系和镜头可视化，把文字转成可执行的视觉判断。</p>
+ </div>
+ <div class="card">
+ <h3>Performance Director</h3>
+ <p>负责表演、停顿、动作、情绪递进，让角色不是"站着说台词"。</p>
+ </div>
+ <div class="card">
+ <h3>Actor AGENT</h3>
+ <p>带着角色身份参与讨论，补充人物反应、心理边界和表演细节。</p>
+ </div>
+ <div class="card">
+ <h3>HIDE</h3>
+ <p>决策门禁和用户意图承接层，把确认、反驳、修正转成流程状态。</p>
+ </div>
+ <div class="card">
+ <h3>Storyboarder</h3>
+ <p>把讨论结果拆成 SHOT，写入镜头目标、标注和下游生成要求。</p>
+ </div>
+ <div class="card">
+ <h3>Lighting</h3>
+ <p>补足光线、氛围、空间层次，避免画面只有主体没有电影感。</p>
+ </div>
+ <div class="card">
+ <h3>Prompt Engineer</h3>
+ <p>把资产、参考、镜头目标、质量约束封装成 SHOT 级 prompt。</p>
+ </div>
+ </div>
+ 
+ <div class="highlight-box">
+ <h3>关键区别</h3>
+ <p>单 AGENT 是"你问它答"；AIYA 是<b>多个制片角色互相质检，再把结果落到可生产的 SHOT</b>。</p>
+ </div>
+ </section>
+ 
+ <section id="match">
+ <div class="section-label">业务匹配</div>
+ <h2>对紫荆四大业务板块的价值</h2>
+ <p>紫荆文化集团的业务布局与 AIYA 的能力高度吻合。以下逐一分析匹配点：</p>
+ 
+ <div class="card accent-card" style="margin-bottom:20px">
+ <h3>🎬 影视产业 · 匹配度：极高</h3>
+ <p style="color:var(--text2);font-size:14px;margin-top:8px;line-height:1.7">
+ <b>紫荆资产：</b>银都机构（长城电影、凤凰影业、新联影业）、港湾影视集团<br>
+ <b>AIYA 价值：</b>剧本讨论 → 分镜生成 → 镜头设计 → 资产生成 → 视频输出 全链路闭环<br>
+ <b>关键数据：</b>人力从创作降为审稿；低经验操作员可产出高于自身水平的结果<br>
+ <b>参考对标：</b>当前行业方案（Boords / Katalist 等）停留在分镜协作层面，缺乏生产判断封装
+ </p>
+ <span class="tag tag-blue">核心切入点</span>
+ </div>
+ 
+ <div class="card" style="margin-bottom:20px;border-left-color:var(--green)">
+ <h3>📚 出版发行 · 匹配度：高</h3>
+ <p style="color:var(--text2);font-size:14px;margin-top:8px;line-height:1.7">
+ <b>紫荆资产：</b>联合出版集团（三联书店、中华书局、商务印书馆）<br>
+ <b>AIYA 价值：</b>文字内容到视觉内容的批量转化、IP 可视化、概念图与插画生产、系列化作品的视觉一致性管理<br>
+ <b>优势：</b>角色/场景/道具资产可复用，确保长线 IP 的视觉连贯性
+ </p>
+ <span class="tag tag-green">IP 可视化</span>
+ </div>
+ 
+ <div class="card" style="margin-bottom:20px;border-left-color:var(--amber)">
+ <h3>📰 传媒资讯 · 匹配度：中高</h3>
+ <p style="color:var(--text2);font-size:14px;margin-top:8px;line-height:1.7">
+ <b>紫荆资产：</b>紫荆杂志社、中国基金报社<br>
+ <b>AIYA 价值：</b>媒体视觉内容生产提速、视频化转型、系列封面/插画/信息图的标准化生产流程<br>
+ <b>SHOT 级 prompt</b> 机制可迁移至图文生产场景
+ </p>
+ <span class="tag tag-amber">内容生产提效</span>
+ </div>
+ 
+ <div class="card" style="margin-bottom:20px;border-left-color:var(--rose)">
+ <h3>🎭 文旅演艺 · 匹配度：中高</h3>
+ <p style="color:var(--text2);font-size:14px;margin-top:8px;line-height:1.7">
+ <b>紫荆资产：</b>中国对外文化集团<br>
+ <b>AIYA 价值：</b>演出视觉概念设计、沉浸式内容制作、跨文化多语言版本制作<br>
+ <b>中英双语原生支持</b>，适合海外巡演和跨境文化传播
+ </p>
+ <span class="tag tag-rose">跨境文化</span>
+ </div>
+ 
+ <div class="highlight-box" style="margin-top:24px">
+ <h3>🔗 双总部战略匹配</h3>
+ <p>紫荆文化集团实行深圳+香港"双总部"管理，业务覆盖港澳台和东南亚。<br>
+ AIYA Studio 天然适配跨境业务场景：中英双语原生支持、可私有化部署、符合国产化信创要求。</p>
+ </div>
+ </section>
+ 
+ <section id="value">
+ <div class="section-label">商业价值</div>
+ <h2>不是省按钮，是降低组织用人成本</h2>
+ <p>商业价值评估的三个核心维度：岗位替代、培训周期、产能复制。</p>
+ 
+ <table class="comparison-table">
+ <thead>
+ <tr><th>维度</th><th>传统方案</th><th>AIYA 方案</th></tr>
+ </thead>
+ <tbody>
+ <tr><td><b>操作员要求</b></td><td>高级复合人才：同时理解 prompt、分镜、构图、灯光、角色一致性、模型修复和视频生成</td><td>低经验操作员 + 系统流程：主要负责任务确认、候选审核、补充修改</td></tr>
+ <tr><td><b>培训周期</b></td><td>招聘稀缺复合人才，培训慢、复制难</td><td>3 天上手内部工具培训，专业判断压缩为可确认步骤</td></tr>
+ <tr><td><b>产能可复制性</b></td><td>依赖个人能力，难以批量复制</td><td>多 AGENT + 资产体系 + 质量门禁，可以训练新人替代高级岗位</td></tr>
+ <tr><td><b>资产沉淀</b></td><td>项目间资产难以复用，风格漂移</td><td>角色/场景/道具资产系统化管理，跨项目一致性保障</td></tr>
+ <tr><td><b>失败返工</b></td><td>依赖个人排查，效率低下</td><td>自动补缺、候选重试、质量门禁闭环，不让流程断掉</td></tr>
+ </tbody>
+ </table>
+ 
+ <div class="quote-block">
+ <p>差距不只是效率，而是组织可复制成本。一个系统化流程可以训练外人；一个高级复合人才很难批量复制。</p>
+ <cite>— AIYA Studio System Evaluation 白皮书</cite>
+ </div>
+ </section>
+ 
+ <section id="roadmap">
+ <div class="section-label">合作路径</div>
+ <h2>分阶段合作建议</h2>
+ <p>考虑到央企采购周期和技术评估要求，建议分三步推进：</p>
+ 
+ <div class="timeline-grid">
+ <div class="timeline-item">
+ <div class="phase">第一阶段</div>
+ <div class="time">1-2 个月</div>
+ <div class="desc"><b>技术演示与评估</b><br>定向演示 + 私有部署 POC + benchmark 测评</div>
+ </div>
+ <div class="timeline-item">
+ <div class="phase">第二阶段</div>
+ <div class="time">2-4 个月</div>
+ <div class="desc"><b>试点项目落地</b><br>选择一条业务线（建议影视）进行实际制片试点</div>
+ </div>
+ <div class="timeline-item">
+ <div class="phase">第三阶段</div>
+ <div class="time">4-6 个月</div>
+ <div class="desc"><b>全面部署</b><br>企业内部部署 + 资产体系建设 + 团队培训</div>
+ </div>
+ </div>
+ 
+ <div class="highlight-box">
+ <h3>🤝 合作模式建议</h3>
+ <p><b>方案 A：技术授权 / 私有化部署</b> — AIYA 系统以私有化方式部署于紫荆内部，按年度许可 + 实施服务费模式合作。<br>
+ <b>方案 B：项目合作共建</b> — 以紫荆具体制片项目为起点，验证效果后逐步扩大覆盖范围。<br>
+ <b>方案 C：战略合作 / 投资入股</b> — 面向长期合作，探讨资本层面的深度绑定（适合紫荆战略布局 AI 影视赛道）。</p>
+ </div>
+ </section>
+ 
+ <section id="benchmark">
+ <div class="section-label">对标参考</div>
+ <h2>行业定位：不是画布工具，是生产系统</h2>
+ <p>AIYA 的核心对标不是"谁有画布"，而是谁能把多 AGENT 制片认知封装成企业内部生产流程。</p>
+ 
+ <table class="comparison-table">
+ <thead>
+ <tr><th>平台类型</th><th>代表产品</th><th>核心定位</th><th>与 AIYA 差异</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>视觉协作容器</td><td>Adobe Firefly Boards</td><td>无限画布 + 视觉 brainstorming</td><td>要会拆解、摆放、判断；只是创作容器，不替代多 AGENT 生产链</td></tr>
+ <tr><td>分镜故事板</td><td>Boords / Katalist</td><td>分镜生成和故事板协作</td><td>仍需懂镜头与审美；偏单点辅助，不封装完整制片认知</td></tr>
+ <tr><td>视频生成工具</td><td>Runway</td><td>视频模型和创意生成</td><td>强在模型，不等于企业内部工作流</td></tr>
+ <tr><td>脚本到视频</td><td>LTX Studio</td><td>脚本到视频的 AI Studio</td><td>偏平台化操作，不是私有化生产系统</td></tr>
+ <tr><td><b>AIYA Studio</b></td><td>本系统</td><td><b>企业内部多 AGENT 制片工作流</b></td><td>低经验操作员 + 审稿确认；把导演、视觉、表演、分镜、prompt、队列封装成流程</td></tr>
+ </tbody>
+ </table>
+ </section>
+ 
+ <div class="cta-section" id="next">
+ <h2>下一步</h2>
+ <p>我们建议安排一次定向技术演示，由黎老师亲自讲解系统架构与现场操作。</p>
+ <div class="btn-group">
+ <a class="btn-primary">预约演示 →</a>
+ <a class="btn-secondary">下载白皮书</a>
+ </div>
+ <div style="margin-top:40px">
+ <table class="comparison-table" style="max-width:500px;margin:0 auto">
+ <thead><tr><th>准备事项</th><th>状态</th></tr></thead>
+ <tbody>
+ <tr><td>技术白皮书</td><td style="color:var(--green)">✓ 已完成</td></tr>
+ <tr><td>合作提案（本文件）</td><td style="color:var(--green)">✓ 已完成</td></tr>
+ <tr><td>同类型剧本 Benchmark</td><td style="color:var(--amber)">待补充</td></tr>
+ <tr><td>完整演示样片</td><td style="color:var(--amber)">待补充</td></tr>
+ <tr><td>3 天上手 SOP</td><td style="color:var(--amber)">待补充</td></tr>
+ <tr><td>私有化部署环境</td><td style="color:var(--rose)">需确认</td></tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
+ 
+ <footer>
+ <p>AIYA Studio × 紫荆文化集团 · 合作提案 · 机密文件 · 2026</p>
+ <p style="margin-top:4px;font-size:12px;color:var(--text2)">基于黎老师技术白皮书 Studio v3 System Evaluation 编制</p>
+ </footer>
+ </body>
+ </html>
