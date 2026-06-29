@@ -1,0 +1,175 @@
+ <!DOCTYPE html>
+ <html lang="zh-CN">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>AIYA Studio — 商业计划书</title>
+ <style>
+ @import url('https://fonts.googleapis.com/css2?family=Calibri&display=swap');
+ *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+ :root{--navy:#0E2841;--accent:#156082;--accent-light:#1A7AA8;--white:#FFFFFF;--bg:#F5F5F5;--border:#D0D0D0;--text:#1A1A1A;--text2:#555555;--lightblue:#0F9ED5;--green:#196B24;--orange:#E97132}
+ html{scroll-behavior:smooth}
+ body{font-family:'Calibri','Microsoft YaHei UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:14px}
+ ::selection{background:var(--accent);color:#fff}
+ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border)}
+ .nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 28px;height:44px}
+ .nav-logo{font-weight:600;font-size:14px;color:var(--navy)}
+ .nav-logo span{color:var(--accent)}
+ .nav-links{display:flex;gap:4px;list-style:none}
+ .nav-links a{color:var(--text2);text-decoration:none;font-size:12px;font-weight:500;padding:4px 10px;border-radius:2px;transition:all .2s}
+ .nav-links a:hover{color:var(--accent);background:rgba(21,96,130,0.06)}
+ .header{background:var(--navy);color:var(--white);padding:60px 28px 44px}
+ .header-inner{max-width:960px;margin:0 auto}
+ .header-label{font-size:11px;letter-spacing:0.15em;color:rgba(255,255,255,0.5);margin-bottom:10px;text-transform:uppercase}
+ .header h1{font-size:clamp(26px,3.5vw,38px);font-weight:300;letter-spacing:-0.3px;line-height:1.15;margin-bottom:10px}
+ .header h1 strong{font-weight:600}
+ .header h1 .accent{color:var(--lightblue)}
+ .header .sub{font-size:14px;color:rgba(255,255,255,0.65);font-weight:300;line-height:1.5;max-width:680px}
+ .header .meta{font-size:11px;color:rgba(255,255,255,0.4);margin-top:14px;border-top:1px solid rgba(255,255,255,0.1);padding-top:10px}
+ section{padding:40px 28px;border-bottom:1px solid var(--border)}
+ section:last-child{border-bottom:none}
+ section>div.inner{max-width:960px;margin:0 auto}
+ .section-label{font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+ h2{font-size:20px;font-weight:600;margin-bottom:4px;color:var(--navy);letter-spacing:-0.2px}
+ h2+div.section-desc{color:var(--text2);font-size:13px;margin-bottom:18px;line-height:1.6}
+ .section-desc{color:var(--text2);font-size:13px;margin-bottom:18px;line-height:1.6}
+ p{color:var(--text2);line-height:1.7;margin-bottom:8px;font-size:13.5px}
+ .highlight{background:rgba(21,96,130,0.05);border:1px solid rgba(21,96,130,0.15);padding:18px 22px;margin:16px 0;border-radius:2px}
+ .highlight h3{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px}
+ .highlight p{font-size:13px;color:var(--text2)}
+ .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0}
+ .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:14px 0}
+ .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:14px 0}
+ .card{padding:18px;border:1px solid var(--border);background:var(--white);border-radius:2px}
+ .card h3{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:4px}
+ .card p{font-size:12.5px;color:var(--text2);margin:0}
+ .card .num{color:var(--accent);font-weight:600;font-size:13px;display:block;margin-bottom:2px}
+ .biz-card{border-left:3px solid var(--accent);padding:14px 16px;margin-bottom:10px;background:var(--white);border-radius:0 2px 2px 0}
+ .biz-card h3{font-size:14px;font-weight:600;color:var(--navy)}
+ .biz-card p{font-size:12.5px;color:var(--text2);margin-top:4px}
+ table{width:100%;border-collapse:collapse;margin:14px 0;font-size:12.5px}
+ table th,table td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+ table th{font-weight:600;font-size:10px;letter-spacing:0.08em;text-transform:uppercase;color:var(--accent);background:rgba(21,96,130,0.04)}
+ table td{color:var(--text2)}
+ .quote{border-left:3px solid var(--accent);padding:12px 16px;margin:14px 0;background:rgba(21,96,130,0.03);border-radius:0 2px 2px 0}
+ .quote p{font-style:italic;color:var(--text2);font-size:13px;margin:0}
+ .quote cite{display:block;margin-top:4px;font-size:11px;color:var(--accent);font-style:normal;font-weight:500}
+ .cta{background:var(--navy);color:var(--white);text-align:center;padding:44px 28px}
+ .cta h2{color:var(--white);margin-bottom:6px}
+ .cta p{color:rgba(255,255,255,0.6);font-size:13px}
+ .pill{display:inline-block;font-size:10px;font-weight:600;padding:2px 10px;border-radius:2px;background:rgba(21,96,130,0.1);color:var(--accent);margin-right:4px;margin-bottom:4px}
+ footer{background:var(--navy);color:rgba(255,255,255,0.4);text-align:center;padding:20px 28px;font-size:11px}
+ @media(max-width:600px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.header{padding:48px 20px 32px}section{padding:28px 20px}}
+ </style>
+ </head>
+ <body>
+ <nav><div class="nav-inner"><div class="nav-logo">AIYA<span>Studio</span></div><ul class="nav-links"><li><a href="#exec">摘要</a></li><li><a href="#core">核心差异</a></li><li><a href="#tech">技术</a></li><li><a href="#market">市场</a></li><li><a href="#model">商业模式</a></li><li><a href="#plan">规划</a></li></ul></div></nav>
+ 
+ <div class="header"><div class="header-inner">
+ <div class="header-label">BUSINESS PLAN · 商业计划书</div>
+ <h1>AIYA Studio <strong>×</strong> <span class="accent">多AGENT制片认知系统</span></h1>
+ <div class="sub">基于 GPT-Image 2 Edit + Dreamina / Seedance 2.0 的企业内部多 AGENT 制片工作流系统。<br>核心差异：多 AGENT 交互质检，自我迭代收敛，让输出质量不受限于操作员水平。</div>
+ <div class="meta">机密 · 2026年6月 · 基于 Studio v3 System Evaluation 技术白皮书</div>
+ </div></div>
+ 
+ <section id="exec"><div class="inner">
+ <div class="section-label">01 · EXECUTIVE SUMMARY</div>
+ <h2>执行摘要</h2>
+ <div class="section-desc">AIYA Studio 不是又一个人工智能生成工具。它是一个将专业制片认知封装为多 AGENT 协作流程的企业级系统。</div>
+ <p>当前 AI 视觉生产行业面临一个根本矛盾：工具能力爆发，但产出质量仍然严重依赖操作员的专业水平。AIYA 的解决方案是——把导演、视觉、表演、镜头等专业判断拆解为多个 AGENT 角色，让它们在生产链路中互相质检、反驳、修复和收敛，最终输出高于任何单个操作员水平的结果。</p>
+ <div class="quote"><p>核心判断不是"能生成什么"，而是"能把专业制片判断交给系统流程"。</p><cite>— 技术白皮书 02 · CORE CONCLUSION</cite></div>
+ <div class="highlight"><h3>项目状态</h3><p>系统完成度 80-85%。核心生产链和多 AGENT 设计已经成形，已具备内部部署演示基础。私有化部署方向明确，中英双语原生支持。</p></div>
+ </div></section>
+ 
+ <section id="core"><div class="inner">
+ <div class="section-label">02 · CORE DIFFERENTIATOR</div>
+ <h2>核心差异：多 AGENT 交互 + 自我迭代</h2>
+ <div class="section-desc">这不是一个"你问它答"的工具。这是多个制片角色组成的判断网络。</div>
+ <div class="grid-2">
+ <div class="card"><span class="num">传统 AI 工具</span><h3>单 AGENT · 一次性输出</h3><p>你输入 prompt，模型生成结果。输出质量 = f(操作员水平)。没有反驳、没有迭代、没有多视角质检。操作员必须自己懂构图、表演、灯光、一致性。</p></div>
+ <div class="card" style="border-color:var(--accent)"><span class="num">AIYA Studio</span><h3>多 AGENT · 自我迭代</h3><p>8 个 AGENT 角色从不同维度提出建议、互相反驳、检查逻辑一致性、修复漏洞，经 Loop 引擎迭代收敛后输出可生产的 SHOT。输出质量 ≈ 系统流程能力，不受操作员水平上限锁死。</p></div>
+ </div>
+ <p><strong>自我迭代闭环：</strong></p>
+ <div class="grid-4">
+ <div class="card"><span class="num" style="color:var(--green)">① 建议</span><p>Story/Visual/Performance 从不同维度提出剧情、画面和表演建议</p></div>
+ <div class="card"><span class="num" style="color:var(--orange)">② 反驳</span><p>AGENT 之间检查逻辑、情绪、镜头可行性和资产可用性</p></div>
+ <div class="card"><span class="num">③ 收敛</span><p>发散想法被压成可执行的故事段落、镜头目标和确认项</p></div>
+ <div class="card"><span class="num" style="color:var(--green)">④ 修复</span><p>发现空洞、矛盾、画面弱或角色动机不足时补写和重构</p></div>
+ <div class="card"><span class="num" style="color:var(--orange)">⑤ 门禁</span><p>HIDE/Review Gate 把通过、拒绝、等待确认转成稳定状态</p></div>
+ <div class="card"><span class="num">⑥ 生产</span><p>生成 SHOT、prompt、参考绑定、图像候选和视频队列</p></div>
+ </div>
+ </div></section>
+ 
+ <section id="tech"><div class="inner">
+ <div class="section-label">03 · TECHNOLOGY</div>
+ <h2>技术架构</h2>
+ <div class="section-desc">四层架构，从底层模型到上层 AGENT 协作。</div>
+ <table><thead><tr><th>层级</th><th>说明</th><th>技术组件</th></tr></thead>
+ <tbody>
+ <tr><td><strong>模型层</strong></td><td>图像生成与编辑底座</td><td>GPT-Image 2 Edit + Dreamina / Seedance 2.0</td></tr>
+ <tr><td><strong>AGENT 层</strong></td><td>8 个专业角色组成生产判断网络</td><td>Story/Visual/Performance Director · Actor AGENT · HIDE · Storyboarder · Lighting · Prompt Engineer</td></tr>
+ <tr><td><strong>工作流层</strong></td><td>生产链路自动化和质量门禁</td><td>Loop 引擎 · 资产系统 · 参考绑定 · SHOT 级 prompt</td></tr>
+ <tr><td><strong>部署层</strong></td><td>企业内部私有化部署</td><td>内网服务器 · 中英双语 · 信创合规</td></tr>
+ </tbody></table>
+ <div class="highlight"><h3>系统完成度评估</h3><p>模型、后端工作流、AGENT 设计强（80-85%）。短板在 UI 新手引导、商业包装、外部 SaaS 化。正式报价前需补充：剧本 benchmark、完整演示样片、3 天上手 SOP。</p></div>
+ </div></section>
+ 
+ <section id="market"><div class="inner">
+ <div class="section-label">04 · MARKET ANALYSIS</div>
+ <h2>市场分析与竞争定位</h2>
+ <div class="section-desc">核心对标不是"谁有画布"，而是谁能把多 AGENT 制片认知封装成企业内部生产流程。</div>
+ <table><thead><tr><th>类别</th><th>代表产品</th><th>定位</th><th>与 AIYA 差异</th></tr></thead>
+ <tbody>
+ <tr><td>视觉协作</td><td>Adobe Firefly Boards</td><td>无限画布，视觉 brainstorming</td><td>只是容器，不替代多 AGENT 生产链</td></tr>
+ <tr><td>故事板</td><td>Boords / Katalist</td><td>分镜生成与协作</td><td>偏单点辅助，不封装完整制片认知</td></tr>
+ <tr><td>视频生成</td><td>Runway</td><td>视频模型和创意生成</td><td>强在模型，不是企业内部工作流</td></tr>
+ <tr><td>脚本到视频</td><td>LTX Studio</td><td>脚本到视频的 AI Studio</td><td>偏平台化操作，不是私有化系统</td></tr>
+ <tr><td><strong>AIYA Studio</strong></td><td>本系统</td><td><strong>企业内部多 AGENT 制片工作流</strong></td><td>低门槛 + 完整制片认知封装</td></tr>
+ </tbody></table>
+ <p><strong>目标客户：</strong>影视制作公司、出版集团的视觉内容部门、媒体机构视频化转型团队、大型文旅演艺项目方。优先面向央企/国企内部私有化部署场景。</p>
+ </div></section>
+ 
+ <section id="model"><div class="inner">
+ <div class="section-label">05 · BUSINESS MODEL</div>
+ <h2>商业模式</h2>
+ <div class="section-desc">面向企业客户的私有化部署 + 服务模式。</div>
+ <div class="grid-2">
+ <div class="biz-card" style="border-left-color:var(--accent)"><h3>私有化部署许可</h3><p>系统部署于客户内网服务器，按年度收取许可证费用。包含基础模型接入、AGENT 工作流引擎、资产管理系统。</p></div>
+ <div class="biz-card" style="border-left-color:var(--green)"><h3>实施与定制服务</h3><p>一次性项目实施费用，包括环境部署、客户资产导入、SOP 建立、操作员培训。</p></div>
+ <div class="biz-card" style="border-left-color:var(--lightblue)"><h3>技术维护与升级</h3><p>年度维护费，涵盖系统更新、模型适配、安全补丁和技术支持。</p></div>
+ <div class="biz-card" style="border-left-color:var(--orange)"><h3>项目合作分成</h3><p>针对具体制片项目，以 AIYA 参与生产，按项目收益或制作预算比例分成。</p></div>
+ </div>
+ <p><strong>定价逻辑：</strong>按企业内部 AI 制片系统、多 AGENT 工作流、企业生产提效工具、私有化部署和高级模型工程化封装来估值。不能按普通网页或画布工具口径报价。</p>
+ </div></section>
+ 
+ <section id="plan"><div class="inner">
+ <div class="section-label">06 · ROADMAP & MILESTONES</div>
+ <h2>发展路线图</h2>
+ <div class="section-desc">从技术验证到规模化商业部署。</div>
+ <div class="grid-3">
+ <div class="card" style="border-top:3px solid var(--accent)"><span class="num">Phase 1 · 当前</span><h3>技术验证 & 早期客户</h3><p>完成 80-85% 系统开发，定向演示给紫荆文化等目标客户，通过私有部署 POC 验证生产链路。补充剧本 benchmark、完整样片、SOP。</p></div>
+ <div class="card" style="border-top:3px solid var(--lightblue)"><span class="num">Phase 2 · 0-6 月</span><h3>战略合作落地</h3><p>与 1-2 家央企/大型文化集团达成合作。完成内部私有化部署，建立资产体系和 SOP 标准，启动首批制片项目。申请相关软件著作权。</p></div>
+ <div class="card" style="border-top:3px solid var(--green)"><span class="num">Phase 3 · 6-18 月</span><h3>规模化复制</h3><p>基于标杆案例向同行业复制，拓展至出版、传媒、文旅垂直领域。完善外部包装和 UI 引导，探索 SaaS 化可能。寻求 A 轮融资。</p></div>
+ </div>
+ <div class="highlight"><h3>融资需求</h3><p>当前阶段估值 300-500 万元。资金用途：团队扩充、产品完善、市场拓展、交付能力建设。欢迎战略投资方（紫荆文化集团优先）和产业资本。</p></div>
+ </div></section>
+ 
+ <section id="team"><div class="inner">
+ <div class="section-label">07 · TEAM</div>
+ <h2>核心团队</h2>
+ <div class="section-desc">技术研发主导，具备完整的系统架构能力。</div>
+ <div class="grid-2">
+ <div class="card"><h3>黎老师 — 技术负责人</h3><p>AIYA Studio 核心系统架构师。主导多 AGENT 生产判断网络、World Model、Loop 引擎、Prompt Engineering 体系的设计与实现。系统评估白皮书作者。</p></div>
+ <div class="card"><h3>运营合伙人 — 待定</h3><p>需要补充商业运营、客户关系管理和市场拓展能力。优先考虑有文化传媒行业资源和央企对接经验的人选。</p></div>
+ </div>
+ </div></section>
+ 
+ <div class="cta"><div class="inner">
+ <h2>下一步</h2>
+ <p style="color:rgba(255,255,255,0.6);font-size:13px;max-width:500px;margin:0 auto">欢迎战略投资方和产业合作伙伴联系，安排定向技术演示。</p>
+ <div style="margin-top:16px"><span style="display:inline-block;padding:8px 24px;background:var(--accent);color:#fff;border-radius:2px;font-size:14px;font-weight:500">预约定向演示 →</span></div>
+ </div></div>
+ 
+ <footer><p>AIYA Studio · 商业计划书 · 机密 · 2026</p><p style="margin-top:2px;opacity:0.6">基于 Studio v3 System Evaluation 技术白皮书编制</p></footer>
+ </body>
+ </html>
